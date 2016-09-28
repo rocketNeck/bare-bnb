@@ -274,5 +274,6 @@ Devise.setup do |config|
   #
 
   #TODO add figaro and place secret and id in env. variable
-  config.omniauth :facebook, '325412331146165', '5d5a7c05272a6002b9054cc0ee9f213e', scope: 'email', info_fields: 'email'
+  config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_secret'], scope: 'email', info_fields: 'email'
+  config.omniauth :google_oauth2, ENV['google_oauth_id'], ENV['google_oauth_secret']
 end

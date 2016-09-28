@@ -59,6 +59,21 @@ body {
   font-weight: 400px;
 }
 
+.social-signin.btn {
+  background-color: #337ab7;
+  border: 1px solid #286090;
+}
+.social-signin.btn:hover, .social-signin.btn:focus {
+  background-color: #88bbe6;
+  border-color: #88bbe6;
+  border-bottom-color: #043b69;
+}
+
+.forgot-password-link {
+  color: red;
+  text-decoration: none;
+}
+
 /******** row sizes **********/
 
 .row-space-1 {

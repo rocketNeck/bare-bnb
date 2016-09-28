@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'toastr-rails'
-
+gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -37,6 +37,7 @@ gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
 gem "devise", :github => 'plataformatec/devise', :branch => 'master'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
