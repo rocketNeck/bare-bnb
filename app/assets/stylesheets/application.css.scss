@@ -2,6 +2,26 @@
 @import "bootstrap";
 @import "toastr";
 
+body {
+  color: #565a5c;
+  background-color: #f8f8f8;
+}
+
+.container {
+  width: 80%;
+}
+
+.navbar-default {
+  background-color: #fff;
+}
+
+.navbar-default .navbar-brand {
+  color: #ff5a5f;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+/******* avatar sizing  **********/
  .avatar-small {
    width: 28px;
  }
