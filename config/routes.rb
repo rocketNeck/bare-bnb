@@ -7,4 +7,5 @@ Rails.application.routes.draw do
              controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
   resources :users, only: [:show]
   resources :rooms
+  resources :photos
 end
