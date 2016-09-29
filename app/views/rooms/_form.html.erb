@@ -5,9 +5,10 @@
 
   <div class="panel-body">
     <div class="container">
-      <%= form_for @room do |f| %>
-        <div class="row">
 
+      <%= form_for @room, html: {multipart: true} do |f| %>
+
+        <div class="row">
           <div class="col-md-4 select">
             <div class="form-group">
               <label>Home Type</label>
@@ -100,6 +101,19 @@
           </div>
         </div>
         <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <span class="btn btn-default btn-file">
+                <i class="fa fa-cloud-upload fa-lg"></i> Upload photos
+                <%= file_field_tag "images[]", type: :file, multiple: true %>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div id="photos">
+          <%= render 'photos/list' %>
+        </div>
+        <div class="row">
           <div class="form-group">
             <%= f.check_box :active %> Active
           </div>
@@ -110,5 +124,4 @@
       <% end %>
     </div>
   </div>
-
 </div>
