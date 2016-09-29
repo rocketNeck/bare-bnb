@@ -151,3 +151,32 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
+
+label {
+  color: #565a5c;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+select {
+  color: #565a5c;
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 10px;
+  appearance: none;
+  -moz-appearance: none;/*firefox*/
+  -webkit-appearance: none;/* safari  n   chrome */
+}
+
+.select:before {
+  content: '\25bc';
+  font-size: 1.2em;
+  position: absolute;
+  color: #82888a;
+  top: 40px;
+  right: 30px;
+  transform: scale(0.84, 0.42);
+}
