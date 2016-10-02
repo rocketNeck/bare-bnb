@@ -272,8 +272,6 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   #
-
-  #TODO add figaro and place secret and id in env. variable
-  config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_secret'], scope: 'email', info_fields: 'email'
+  config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_secret'], scope: 'email', info_fields: 'email, name', image_size: {width: '200', height: '200'}
   config.omniauth :google_oauth2, ENV['google_oauth_id'], ENV['google_oauth_secret']
 end
