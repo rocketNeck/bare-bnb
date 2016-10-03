@@ -48,7 +48,7 @@ class RoomsController < ApplicationController
       redirect_to edit_room_path(@room), notice: "Updated..."
 
     else
-      render :new
+      render :edit
     end
   end
 
