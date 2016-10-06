@@ -1,6 +1,8 @@
 <!--TODO Must make images responsive and fit to view. I am using bootstrap and
 added class="image-responsive" i am also using paperclip...  -->
 
+<!--TODO edit page will sometimes persist edited data and many times will not -->
+
 <div class="panel panel-default">
   <div class="panel-body">
     <!-- image -->
@@ -124,6 +126,30 @@ added class="image-responsive" i am also using paperclip...  -->
             <span class="sr-only">Next</span>
           </a>
         </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <!-- google map -->
+    <div class="row">
+      <div class="col-md-12">
+      <style>
+        #map {
+          height: 400px;
+          width: 100%;
+        }
+      </style>
+        <div id="map"></div>
+        <script>
+          function initMap() {
+            var uluru = {lat: <%= @room.latitude%>, lng: <%= @room.longitude %>};
+            var map = new google.maps.Map( document.getElementById('map'), { zoom: 9, center: uluru} );
+            var marker = new google.maps.Marker({position: uluru, map: map});
+          }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIg_DGlq_GlACo69mlq4CIV-iB7dNLIvE&callback=initMap">
+        </script>
       </div>
     </div>
   </div>
