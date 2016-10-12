@@ -1,7 +1,8 @@
 class Room < ApplicationRecord
   belongs_to :user
   has_many :photos
-
+  has_many :reservations
+  
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
@@ -14,5 +15,5 @@ class Room < ApplicationRecord
   validates :summary, presence: true, length: {maximum: 50}
   validates :address, presence: true
   validates :price, numericality: {only_integer:true, greater_than: 5}
-  
+
 end
