@@ -8,7 +8,9 @@ added class="image-responsive" i am also using paperclip...  -->
     <!-- image -->
     <div class="row">
       <div class="col-md-12">
-        <%= image_tag @photos.first.image.url(), class:"image-responsive" if @photos.length > 0 %>
+        <% if @photos.length > 0 %>
+          <%= image_tag @photos.first.image.url(), class: "img-fluid", style: "max-width: 100%; height: auto;" %>
+        <% end %>
       </div>
     </div>
     <br>
@@ -58,6 +60,8 @@ added class="image-responsive" i am also using paperclip...  -->
       </div>
 
       <div class="col-md-4">
+        <!-- reservation form -->
+        <%= render 'reservations/form' %>
       </div>
     </div>
     <!-- about -->
@@ -155,7 +159,7 @@ added class="image-responsive" i am also using paperclip...  -->
     <!-- Near by rooms -->
     <h3>Near By</h3>
     <div class="row">
-      <% for room in @rooms.nearbys(10) %>
+      <% for room in @room.nearbys(10) %>
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading preview">
