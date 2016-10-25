@@ -23,7 +23,10 @@ class MessagesController < ApplicationController
 
   private
   def set_conversation
-    @conversation = Conversation.find(params[:conversation_id])
+    def self.set_conversation
+      @conversation
+    end
+    @conversation = Conversation.find(params[:conversation_id]).first
   end
 
   def message_params

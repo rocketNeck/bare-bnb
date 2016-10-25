@@ -56,7 +56,10 @@ class RoomsController < ApplicationController
 
   private
     def set_room
-      @room = Room.find(params[:id])
+      def self.set_room
+        @room
+      end
+      @room = Room.find(params[:id]).first
     end
 
     def room_params
