@@ -7,4 +7,6 @@ class Message < ApplicationRecord
   def message_time
     created_at.strftime("%v")
   end
+
+  #TODO send email when a private message is made
 end
