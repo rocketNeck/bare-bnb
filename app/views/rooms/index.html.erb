@@ -2,7 +2,8 @@
   <div class="col-md-3">
     <ul class="sidebar-list">
       <li class="sidebar-item"><%= link_to "Your Listing", rooms_path, class: "sidebar-link active" %></li>
-      <li class="sidebar-item"><%= link_to "Your Reservations", rooms_path, class: "sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link" %></li>
     </ul>
   </div>
   <div class="col-md-9">
@@ -17,7 +18,7 @@
               <% if room.photos.length > 0 %>
                 <%= image_tag room.photos[0].image.url(:thumb) %>
               <% else %>
-                <%= image_tag 'default-burning-house.jpg', style: "max-width:100px;max-height:100px;" %>
+                <%= image_tag 'default-burning-house.jpg', style: "max-height:100px;" %>
               <% end %>
             </div>
             <div class="col-md-7">
