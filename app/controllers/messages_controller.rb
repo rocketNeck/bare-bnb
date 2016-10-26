@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
     def self.set_conversation
       @conversation
     end
-    @conversation = Conversation.find(params[:conversation_id]).first
+    @conversation = Conversation.find(params[:conversation_id])
   end
 
   def message_params
