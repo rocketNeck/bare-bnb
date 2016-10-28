@@ -150,29 +150,11 @@ added class="image-responsive" i am also using paperclip...  -->
         </div>
       </div>
     </div>
-    <!-- google map -->
-    <div class="row">
-      <div class="col-md-12">
-      <style>
-        #map {
-          height: 400px;
-          width: 100%;
-        }
-      </style>
-        <div id="map"></div>
-        <script>
-          function initMap() {
-            var uluru = {lat: <%= @room.latitude%>, lng: <%= @room.longitude %>};
-            var map = new google.maps.Map( document.getElementById('map'), { zoom: 9, center: uluru} );
-            var marker = new google.maps.Marker({position: uluru, map: map});
-          }
-        </script>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIg_DGlq_GlACo69mlq4CIV-iB7dNLIvE&callback=initMap">
-        </script>
-      </div>
-    </div>
-    <!-- Near by rooms -->
+
+
+
+
+
     <h3>Near By</h3>
     <div class="row">
       <% for room in @room.nearbys(10) %>
@@ -193,6 +175,3 @@ added class="image-responsive" i am also using paperclip...  -->
         </div>
       <% end %>
     </div>
-
-  </div>
-</div>
