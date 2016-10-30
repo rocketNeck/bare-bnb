@@ -90,11 +90,16 @@ added class="image-responsive" i am also using paperclip...  -->
         </div>
       </div>
     </div>
+
+
+
+
+    <% if @photos.count > 0 %>
     <!-- carousel -->
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <% if @photos %>
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
 
@@ -125,10 +130,11 @@ added class="image-responsive" i am also using paperclip...  -->
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <%end%>
+
       </div>
     </div>
     <br>
+    <%end%>
     <hr>
 
     <!--  reviews -->
