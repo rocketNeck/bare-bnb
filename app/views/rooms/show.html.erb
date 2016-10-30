@@ -1,14 +1,12 @@
 <!--TODO Must make images responsive and fit to view. I am using bootstrap and
 added class="image-responsive" i am also using paperclip...  -->
 
-<!--TODO edit page will sometimes persist edited data and many times will not -->
-
 <div class="panel panel-default">
   <div class="panel-body">
     <!-- image -->
     <div class="row">
       <div class="col-md-12">
-        <%= image_tag @photos[0].image.url(), class: "img-fluid", style: "max-width: 100%; height: auto;" %>
+          <%= image_tag @room.show_first_photo(), style: "min-width:100%" %>
       </div>
     </div>
     <br>

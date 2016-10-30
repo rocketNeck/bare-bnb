@@ -1,5 +1,5 @@
 class Room < ApplicationRecord
-  #TODO must validate the the room has a photo before generating the room. 
+  #TODO must validate the the room has a photo before generating the room.
 
   belongs_to :user
   has_many :photos
@@ -19,8 +19,10 @@ class Room < ApplicationRecord
   validates :address, presence: true
   validates :price, numericality: {only_integer: true, greater_than: 5}
 
-  def show_first_photo(size)
+  def show_first_photo(size = nil)
     if self.photos.length == 0
+      #used conditional because default image for paperclip is buggy
+      #TODO work on fixing paperclip default image bug-ness
       ActionController::Base.helpers.asset_path('default-burning-house.jpg')
     else
       self.photos[0].image.url(size)
