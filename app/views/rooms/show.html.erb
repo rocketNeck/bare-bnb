@@ -8,9 +8,7 @@ added class="image-responsive" i am also using paperclip...  -->
     <!-- image -->
     <div class="row">
       <div class="col-md-12">
-        <% if @photos.length > 0 %>
-          <%= image_tag @photos[0].image.url(), class: "img-fluid", style: "max-width: 100%; height: auto;" %>
-        <% end %>
+        <%= image_tag @photos[0].image.url(), class: "img-fluid", style: "max-width: 100%; height: auto;" %>
       </div>
     </div>
     <br>
@@ -179,11 +177,7 @@ added class="image-responsive" i am also using paperclip...  -->
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading preview">
-              <% if room.photos.count > 0 %>
-                <%= image_tag room.photos[0].image.url(:medium) %>
-              <% else %>
-                <%= image_tag '/images/default-burning-house.jpg' %>
-              <% end %>
+              <%= image_tag room.show_first_photo(:medium) %>
             </div>
             <div class="panel-body">
               <%= link_to room.listing_name, room %><br>

@@ -1,4 +1,6 @@
 class Room < ApplicationRecord
+  #TODO must validate the the room has a photo before generating the room. 
+
   belongs_to :user
   has_many :photos
   has_many :reservations
@@ -15,7 +17,7 @@ class Room < ApplicationRecord
   validates :listing_name, presence: true, length: {maximum: 50}
   validates :summary, presence: true, length: {maximum: 50}
   validates :address, presence: true
-  validates :price, numericality: {only_integer:true, greater_than: 5}
+  validates :price, numericality: {only_integer: true, greater_than: 5}
 
   def show_first_photo(size)
     if self.photos.length == 0
