@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3">
     <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Your Listing", rooms_path, class: "sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "Your Listings", rooms_path, class: "sidebar-link" %></li>
       <li class="sidebar-item"><%= link_to "Your Reservations", your_reservations_path, class: "sidebar-link" %></li>
       <li class="sidebar-item"><%= link_to "Your Trips", your_trips_path, class: "sidebar-link active" %></li>
     </ul>
@@ -12,6 +12,9 @@
         Your Trips
       </div>
       <div class="panel-body">
+        <% if @trips.count == 0 %>
+          <%= "  -  You have no trips." %>
+        <%end%>
         <% @trips.each do |trip| %>
           <div class="row">
             <div class="col-md-2">
