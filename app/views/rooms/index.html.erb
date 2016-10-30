@@ -15,6 +15,7 @@
         <% @rooms.each do |room| %>
           <div class="row">
             <div class="col-md-3">
+              <!--TODO: has inline style due to default image conditional not using paperclip styles -->
              <%= image_tag room.show_first_photo(:thumb), style: "width:100px;height:80px;" %>
             </div>
             <div class="col-md-6">
