@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   def create
+    binding.pry
     @review = current_user.reviews.create(review_params)
     redirect_to @review.room
   end
