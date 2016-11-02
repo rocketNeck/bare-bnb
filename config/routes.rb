@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   get '/preview' => 'reservations#preview'
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
+  get '/search' => 'pages#search'
 end
