@@ -16,5 +16,5 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require toastr
-
+//= require jquery.sticky.js
 //= require_tree .
