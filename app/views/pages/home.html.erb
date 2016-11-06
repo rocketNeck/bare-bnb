@@ -75,6 +75,7 @@
           <%= image_tag room.show_first_photo(:medium),style: "min-height:250px;max-height:250px;" %>
         </div>
         <div class="panel-body">
+          <%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
           <%= link_to room.listing_name, room %>
         </div>
       </div>
