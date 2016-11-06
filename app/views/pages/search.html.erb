@@ -8,11 +8,9 @@
           <% if @arrRooms.length > 0 %>
             var uluru = {lat: <%= @arrRooms[0].latitude%>, lng: <%= @arrRooms[0].longitude %>};
           <% else %>
-            var uluru = {lat: 40.7128, lng: 74.0059};
+            var uluru = {lat: 40.7128, lng: -74.0059};
           <% end %>
-
           var map = new google.maps.Map( document.getElementById('widget'), { zoom: 9, center: uluru} );
-
           <% @arrRooms.each do |room| %>
             var marker = new google.maps.Marker({position: {lat:<%= room.latitude %>, lng: <%= room.longitude %> }, map: map});
           <% end %>
@@ -40,13 +38,15 @@
               <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control" %>
             </div>
             <div class="col-md-3">
-              <%= f.text_field :price_gteq, placeholder: "Max Price", class: "form-control" %>
-            </div>
-            <div class="col-md-3">
               <%= f.text_field :price_gteq, placeholder: "Min Price", class: "form-control" %>
             </div>
+            <div class="col-md-3">
+              <%= f.text_field :price_lteq, placeholder: "Max Price", class: "form-control" %>
+            </div>
           </div>
+
           <hr>
+
           <div class="row">
             <div class="col-md-4">
               <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
@@ -85,24 +85,23 @@
           </div>
           <hr>
           <div class="row">
-
-              <div class="col-md-2 text-center">
-                <%= check_box_tag 'q[is_tv_eq]', true %>Television
-              </div>
-              <div class="col-md-2 text-center">
-                <%= check_box_tag 'q[is_kitchen_eq]', true %>Kitchen
-              </div>
-              <div class="col-md-2 text-center">
-                <%= check_box_tag 'q[is_internet_eq]', true %>Internet
-              </div>
-              <div class="col-md-2 text-center">
-                <%= check_box_tag 'q[is_heating_eq]', true %>Heating
-              </div>
-              <div class="col-md-2 text-center">
-                <%= check_box_tag 'q[is_air_eq]', true %>Cooling
-              </div>
-
-          </div><br>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_tv_eq]", true %> TV
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_kitchen_eq]", true %> Kitchen
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_internet_eq]", true %> Internet
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_heating_eq]", true %> Heating
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_air_eq]", true %> Air Conditioning
+            </div>
+          </div>
+          <br>
 
           <div class="row text-center">
             <%= f.submit "Search", class: "btn btn-primary btn-lg" %>
@@ -110,6 +109,7 @@
 
         <% end %>
   <hr>
+
 <!-- Show rooms -->
         <div class="row">
           <% @arrRooms.each do |room| %>
@@ -146,7 +146,6 @@
         $("#end_date").attr('disabled', false);
       }
     })
-
     $("end_date").datepicker({
       dateFromat: 'dd-mm-yy',
       minDate: 0,
