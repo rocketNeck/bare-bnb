@@ -23,6 +23,7 @@ class Room < ApplicationRecord
     if self.photos.length == 0
       #used conditional because default image for paperclip is buggy
       #TODO work on fixing paperclip default image bug-ness
+      # it may make more sence to check if a model has a photo in the view and if not link to cloudinery default
       ActionController::Base.helpers.asset_path('default-burning-house.jpg')
     else
       self.photos[0].image.url(size)
