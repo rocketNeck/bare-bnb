@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
   get '/search' => 'pages#search'
+  get '/privacy_policy' => 'pages#privacy_policy'
 
   post '/notify' => 'reservations#notify'
   post '/your_trips' => 'reservations#your_trips'
+
 end
